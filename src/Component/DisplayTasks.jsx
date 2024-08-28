@@ -6,7 +6,7 @@ function DisplayTasks({allTasks,HandleDeleteTask,HandleEditTask}) {
         {allTasks.map((task, index) => (
           <div
             key={index}
-            className='border border-2 border-white/40 rounded-md m-2 p-2 bg-white/40 '
+            className='border-2 border-white/40 rounded-md m-2 p-2 bg-white/40 '
           >
             <p className='text-md'>Task - {index + 1}</p>
             <h3>{task}</h3>
