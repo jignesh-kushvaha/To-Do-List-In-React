@@ -12,7 +12,6 @@ function App() {
     if(!isEdited){
       setAllTasks([...allTasks, tasks]);
       addToLocalStorage([...allTasks, tasks]);
-      setTasks("");
     }else{
       setIsEdited(false);
       const prevtask = [...allTasks];
@@ -21,6 +20,7 @@ function App() {
       addToLocalStorage(prevtask);
       setEditIndex(-1);
     }
+    setTasks("");
   }
 
   function HandleDeleteTask(index) {
@@ -61,7 +61,7 @@ function App() {
           }
           value={tasks}
           className="w-full p-2 bg-transparent border border-gray-600 rounded focus:outline-none focus:border-gray-400 focus:bg-transparent"
-        />{" "}
+        />
         <button onClick={HandleAddTasks} className="bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg px-4 py-2 mt-4 transform transition-transform duration-200 hover:scale-95 font-semibold focus:border-none">{isEdited ? "Update Task" : "Add New Task"} </button>
       </div>
       <DisplayTasks allTasks={allTasks} HandleDeleteTask={HandleDeleteTask} HandleEditTask={HandleEditTask}/>
